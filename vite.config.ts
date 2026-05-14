@@ -10,30 +10,30 @@ function figmaAssetResolver() {
     resolveId(id) {
       if (id.startsWith('figma:asset/')) {
         const filename = id.replace('figma:asset/', '')
-        return path.resolve(__dirname, 'src/assets', filename)
+        return path.resolve('__dirname', 'src/assets', filename)
       }
     },
   }
 }
 
 export default defineConfig({
+  base: '/Esofarm/',
+
   plugins: [
     figmaAssetResolver(),
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
+
   resolve: {
     alias: {
-      // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve('__dirname', './src'),
     },
   },
 
-<<<<<<< HEAD
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
-=======
->>>>>>> 5f872cbafcde0e094c246d5352a507a01c7aa315
+  build: {
+    outDir: 'dist',
+  },
+
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
