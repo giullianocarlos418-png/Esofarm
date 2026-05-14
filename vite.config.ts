@@ -31,6 +31,9 @@ export default defineConfig({
     },
   },
 
+<<<<<<< HEAD
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+=======
+>>>>>>> 5f872cbafcde0e094c246d5352a507a01c7aa315
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
